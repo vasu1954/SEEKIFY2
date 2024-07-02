@@ -17,6 +17,8 @@
     "mongodb": "^6.2.0",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.13",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+       "axios": "^1.7.2",
+    "react-loader-spinner": "^6.1.6"
   }
 }
