@@ -1,3 +1,6 @@
-const API_URL = import.meta.env.VITE_API_URL;
 
+
+// src/config.js
+
+const API_URL = 'https://seekify-2-api.vercel.app';
 export default API_URL;
