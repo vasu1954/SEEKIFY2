@@ -3,12 +3,14 @@ import { useParams } from "react-router-dom";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { FiCalendar, FiClock, FiMapPin, FiDatabase } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import API_URL from "../../config";
+
 const JobDetails = () => {
   const { id } = useParams();
   const [job, setJob] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/all-jobs/${id}`)
+    fetch(`${API_URL}/all-jobs/${id}`)
       .then((res) => res.json())
       .then((data) => setJob(data));
   }, [id]);

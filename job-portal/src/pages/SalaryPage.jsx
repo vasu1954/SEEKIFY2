@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PageHeader from "../components/PageHeader";
 import { FaIndianRupeeSign } from "react-icons/fa6";
+import API_URL from "../../config";
 
 const SalaryPage = () => {
   const [jobs, setJobs] = useState([]);
@@ -8,7 +9,7 @@ const SalaryPage = () => {
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/all-jobs")
+    fetch(`${API_URL}/all-jobs`)
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched data:", data);

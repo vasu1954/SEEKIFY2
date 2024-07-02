@@ -4,6 +4,8 @@ import Sidebar from "../Sidebar/Sidebar";
 import Jobs from "./Jobs";
 import Card from "../components/Card";
 import { useLocation } from "react-router-dom";
+import API_URL from "../../config";
+
 
 const Home = () => {
   const location = useLocation();
@@ -22,7 +24,7 @@ const Home = () => {
     const fetchJobs = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch("http://localhost:5000/all-jobs");
+        const response = await fetch(`${API_URL}/all-jobs`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

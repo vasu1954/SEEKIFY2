@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
+import API_URL from "../../config";
+
 
 const MyJobs = () => {
   const { user } = useContext(AuthContext);
@@ -12,7 +14,7 @@ const MyJobs = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:5000/myJobs/${user?.email}`)
+    fetch(`${API_URL}/myJobs/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);
@@ -48,7 +50,7 @@ const MyJobs = () => {
 
   // delete a job
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/job/${id}`, {
+    fetch(`${API_URL}/job/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

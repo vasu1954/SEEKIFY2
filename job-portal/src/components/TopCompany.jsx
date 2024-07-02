@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import HomeCompanyCard from "../components/HomeCompanyCard";
+import API_URL from "../../config";
 
 const TopCompany = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -12,7 +13,7 @@ const TopCompany = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/all-jobs")
+      .get(`${API_URL}/all-jobs`)
       .then((response) => {
         setJobs(response.data);
         setIsLoading(false);

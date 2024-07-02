@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import CreatableSelect from "react-select/creatable";
+import API_URL from "../../config";
 
 const CreateJob = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -15,7 +16,7 @@ const CreateJob = () => {
   const onSubmit = (data) => {
     data.skills = selectedOption;
 
-    fetch("http://localhost:5000/post-job", {
+    fetch(`${API_URL}/post-job`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

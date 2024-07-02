@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { useLoaderData, useParams } from "react-router-dom";
 import CreatableSelect from "react-select/creatable";
 import PageHeader from "../components/PageHeader";
+import API_URL from "../../config";
+
 
 const UpdateJob = () => {
   const { id } = useParams();
@@ -39,7 +41,7 @@ const UpdateJob = () => {
   const onSubmit = (data) => {
     data.skills = selectedOption;
 
-    fetch(`http://localhost:5000/update-job/${id}`, {
+    fetch(`${API_URL}/update-job/${id}`, {
       method: "PATCH",
 
       headers: {

@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Circles } from "react-loader-spinner";
 import animator from "../assets/svgviewer-output.svg";
+import API_URL from "../../config";
+
 
 const ApplyNow = () => {
   const { joblabel } = useParams();
@@ -58,7 +60,7 @@ const ApplyNow = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/submit-form", {
+      const response = await fetch('${API_URL}/submit-form', {
         method: "POST",
         body: data,
       });

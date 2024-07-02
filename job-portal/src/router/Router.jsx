@@ -13,6 +13,8 @@ import Register from '../pages/Register.jsx';
 import ApplyNow from '../pages/ApplyNow.jsx';
 import LandingPage from '../pages/LandingPage.jsx';
 import AboutUsPage from '../pages/AboutUsPage.jsx';
+import API_URL from "../../config";
+
 
 const router = createBrowserRouter([
   {
@@ -42,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: "edit-job/:id",
         element: <UpdateJob />,
-        loader: ({ params }) => fetch(`http://localhost:5000/all-jobs/${params.id}`)
+        loader: ({ params }) => fetch(`${API_URL}/all-jobs/${params.id}`)
       },
       {
         path: "/jobs/:id",
